@@ -11,6 +11,9 @@
 			background-color: #E6E6FA; /*lavender */
 			cursor: pointer;
 		}
+        .active{
+            background-color: #6F4E37;
+        }
 	</style>
 </head>
 <body>
@@ -18,7 +21,26 @@
 	<div class="square" id="square2" ></div>
 	<div class="square" id="square3" ></div>
 
-	<script type="text/javascript" src="./script.js">
+	<script >
+let squares=document.querySelectorAll(".square")
+squares.forEach(box=>{
+ box.addEventListener("mouseover", (e)=>{
+  squares.forEach(item=>{
+    if(item!==e.target)item.classList.add("active")
+  })
+
+ })
+
+ box.addEventListener("mouseout",(e)=>{
+    squares.forEach(ele=>{
+        ele.classList.remove("active");
+    })
+ })
+})
+
+
+
+		
 	</script>
 </body>
 </html>
